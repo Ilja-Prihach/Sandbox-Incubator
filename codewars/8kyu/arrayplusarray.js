@@ -15,3 +15,18 @@ function arrayPlusArray(arr1, arr2) {
         }
     return sum
 }
+
+
+
+
+// let arr1 = [1, 2, 3];
+// let arr2 = [4, 5, 6];
+// function arrayPlusArray(arr1, arr2) {
+//     let sum = 0;
+//     for (let i = 0; i < arr3.length; i++) {
+//         sum += arr1[i] + arr[2]
+//         }
+//     return sum
+//     }
+//     console.log(arrayPlusArray(arr1, arr2));
+
