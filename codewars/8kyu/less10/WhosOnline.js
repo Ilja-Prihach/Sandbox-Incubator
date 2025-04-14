@@ -21,3 +21,17 @@
 }]
 
 
+const whosOnline = (friends) => {
+    const friendStatus = {'online': [], 'offline': [], 'away': []}
+    for (let i = 0; i < friends.length; i++) {
+        if (friends[i].lastActivity > 10 && friends[i].status === 'online') {
+            friendStatus.away.push(friends.username)
+        } else if (friends[i].lastActivity <= 10 && friends[i].status === 'online') {
+            friendStatus.online.push(friends.username)
+        } else if (friends[i].status === 'offline') {
+            friendStatus.offline.push(friends.username)
+        }
+    }
+
+    return friendStatus
+}
