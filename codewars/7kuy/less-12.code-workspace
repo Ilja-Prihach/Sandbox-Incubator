@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../Incubator/less-12"
+		},
+		{
+			"path": "../../../React-TS/js"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../React-TS/Sprint1/NativeJS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "NativeJS"
+	}
+}
