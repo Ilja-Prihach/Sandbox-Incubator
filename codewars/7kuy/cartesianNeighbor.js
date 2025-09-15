@@ -27,3 +27,5 @@ function cartesianNeighbor(x, y){
 }
 
 console.log(cartesianNeighbor(2,2));
+
+//выаыв
