@@ -33,31 +33,24 @@ function sumStrings(a, b) {
         } else {
             temp = 0;
         }
-
         if (res) {
-
             res = sum.toString() + res
         } else {
             res = sum.toString()
         }
-
     }
 
     if (temp) {
         res = temp.toString() + res
-
     }
 
     for (let i = 0; i < res.length; i++) {
-
         if (res[0] === '0') {
             res = res.slice(1)
             console.log(res)
         } else {
-
             return res
         }
-
     }
     return res
 }
