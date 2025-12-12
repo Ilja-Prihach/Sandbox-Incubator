@@ -23,3 +23,16 @@ function getLastDigit(index) {
     return +number.toString().slice(-1)
 
 }
+
+
+
+
+function fibonacciMemo(n, memo = {}) {
+    if (n in memo) return memo[n]
+    if (n === 0) return 0
+    if (n === 1) return 1
+
+
+    memo[n] = fibonacciMemo((n - 1), memo) + fibonacciMemo((n - 2), memo)
+    return memo[n]
+}
