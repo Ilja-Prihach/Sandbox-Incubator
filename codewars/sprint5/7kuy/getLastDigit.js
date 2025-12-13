@@ -36,3 +36,41 @@ function fibonacciMemo(n, memo = {}) {
     memo[n] = fibonacciMemo((n - 1), memo) + fibonacciMemo((n - 2), memo)
     return memo[n]
 }
+
+
+
+function getfibo(n) {
+    const arrFib = [];
+     arrFib[0] = 0
+     arrFib[1] = 1
+
+    for (let i = 2; i <= n; i++) {
+        arrFib[i] = arrFib[i - 1] +  arrFib[i - 2]
+    }
+
+        return arrFib[n]
+}
+
+
+
+//Factorial
+
+function getFactorial (n) {
+    if (n === 1 || n === 0) return 1
+    if ( n < 0) return "error: number has to be positive"
+    let res = 1;
+    for (let i = 1; i <= n; i++) {
+        res *= i
+    }
+    return res
+}
+
+function getFactorialRecursion(n, memo = {}) {
+    if (n === 1 || n === 0) return 1
+    if ( n < 0) return "error: number has to be positive"
+
+    if (n in memo) return memo[n];
+
+    memo[n] = n * getFactorialRecursion(n - 1, memo);
+    return memo[n];
+}
