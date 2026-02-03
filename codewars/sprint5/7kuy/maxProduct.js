@@ -7,3 +7,19 @@
 // maxProduct([2, 1, 5, 0, 4, 3])              // 20
 // maxProduct([7, 8, 9])                       // 72
 // maxProduct([33, 231, 454, 11, 9, 99, 57])   // 104874
+
+function maxProduct(a) {
+    let max1 = -Infinity;
+    let max2 = -Infinity;
+
+    for (const x of a) {
+        if (x > max1) {
+            max2 = max1;
+            max1 = x;
+        } else if (x > max2) {
+            max2 = x;
+        }
+    }
+
+    return max1 * max2;
+}
