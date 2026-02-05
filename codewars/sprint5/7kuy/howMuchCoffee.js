@@ -9,3 +9,18 @@
 //     You just watch a movie ('movie').
 //     Other events can be present and it will be represent by arbitrary string, just ignore this one.
 //     Each event can be downcase/lowercase, or uppercase. If it is downcase/lowercase you need 1 coffee by events and if it is uppercase you need 2 coffees.
+
+function howMuchCoffee(events) {
+    const validEvents = ['cw', 'dog', 'cat', 'movie'];
+    let coffee = 0;
+
+    for (const event of events) {
+        const lower = event.toLowerCase();
+
+        if (!validEvents.includes(lower)) continue;
+
+        coffee += event === event.toLowerCase() ? 1 : 2;
+    }
+
+    return coffee > 3 ? 'You need extra sleep' : coffee;
+}
