@@ -6,3 +6,28 @@
 //     In the second example, the alarm sounds 4 times in a day.
 //
 //     More examples in test cases. Good luck!
+
+function solve (arr) {
+    const uniq = [...new Set(arr)];
+
+    const minutes = uniq.map(t => {
+        const [hh, mm] = t.split(':').map(Number)
+        return hh * 60 + mm
+    })
+
+    minutes.sort((a, b) => a - b)
+
+    let maxGap = 0;
+
+    for (let i = 0; i < minutes.length - 1; i++) {
+        const gap = (minutes[i + 1] - minutes[i]) - 1;
+        if (gap > maxGap) maxGap = gap;
+    }
+
+    const wrapGap = (1440 - minutes[minutes.length - 1] + minutes[0]) - 1;
+    if (wrapGap > maxGap) maxGap = wrapGap;
+
+    const hh = String(Math.floor(maxGap / 60)).padStart(2, '0');
+    const mm = String(maxGap % 60).padStart(2, '0');
+    return `${hh}:${mm}`;
+}
