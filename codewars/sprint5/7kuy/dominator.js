@@ -5,5 +5,24 @@
 //     The function should return −1 if array does not have a dominator. All values in arr will be >=0.
 
 function dominator(arr) {
-    //code me
+    let candidate = null
+    let count = 0
+    for (const i of arr) {
+        if (count === 0) {
+            candidate = i
+            count = 1
+        } else if  (i === candidate) {
+            count++
+        } else {
+            count--
+        }
+    }
+
+    let occurrences = 0
+
+    for (const i of arr) {
+        if (i === candidate) occurrences++
+    }
+
+    return occurrences > arr.length / 2 ? candidate : -1;
 }
