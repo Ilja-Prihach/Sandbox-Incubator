@@ -4,4 +4,10 @@
 //     If the string is not one of the specified characters, the function should return null (throw an ArgumentException in C#).
 // Keep in mind, you cannot divide by zero. If an attempt to divide by zero is made, return null / None (Python) / throw an ArgumentException (C#).
 
-
+function calculate(a, op, b) {
+    if (op === '+') return a + b
+    if (op === '-') return a - b
+    if (op === '*') return a * b
+    if (op === '/' && b !== 0) return a / b
+    return null
+}
