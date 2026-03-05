@@ -9,5 +9,19 @@
 // Words will be separated by exactly one space and there will be no leading or trailing spaces.
 
 function insideOut(x){
+    const words = x.split(' ');
 
+    const result = words.map(word => {
+        const len = word.length;
+        const mid = Math.floor(len / 2)
+        const leftPart = word.slice(0, mid);
+        const rightPart = word.slice(len % 2 === 0 ? mid : mid + 1)
+        const left = leftPart.split('').reverse().join('');
+        const right = rightPart.split('').reverse().join('');
+        if (len % 2 === 0) {
+            return left + right;
+        }
+        return left + word[mid] + right;
+    })
+    return result.join(' ');
 }
