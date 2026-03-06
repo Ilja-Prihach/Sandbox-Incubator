@@ -12,6 +12,29 @@
 //
 // Good luck! (I think you're going to need it.)
 
-function zombieShootout (zombies, range, ammo) {
-    return "";
+function zombieShootout(zombies, range, ammo) {
+    let killed = 0;
+    let remainingZombies = zombies;
+    let remainingAmmo = ammo;
+    let remainingRange = range;
+
+    while (remainingZombies > 0) {
+        if (remainingAmmo === 0) {
+            return `You shot ${killed} zombies before being eaten: ran out of ammo.`;
+        }
+
+        remainingZombies--;
+        remainingAmmo--;
+        killed++;
+
+        if (remainingZombies === 0) {
+            return `You shot all ${killed} zombies.`;
+        }
+
+        remainingRange -= 0.5;
+
+        if (remainingRange <= 0) {
+            return `You shot ${killed} zombies before being eaten: overwhelmed.`;
+        }
+    }
 }
