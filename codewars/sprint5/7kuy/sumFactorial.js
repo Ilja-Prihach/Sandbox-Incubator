@@ -12,3 +12,20 @@
 // Good Luck!
 //
 //     Note: Assume that all values in the list are positive integer values > 0 and each value in the list is unique.
+
+
+function sumFactorial(arr){
+    let sum = 0
+    function factorial(n){
+        if(n <= 1) return 1;
+        return (n * factorial(n - 1));
+        }
+    // return arr.reduce((sum, num) => sum + factorial(num), 0);
+    for(let i = 0; i < arr.length; i++){
+        sum += factorial(arr[i]);
+    }
+
+    return sum;
+}
+
+
