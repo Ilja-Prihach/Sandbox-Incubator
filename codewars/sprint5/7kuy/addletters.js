@@ -16,3 +16,18 @@
 // addLetters() = 'z'
 // Confused? Roll your mouse/tap over here
 //
+
+
+
+
+function addLetters(...letters) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+    const sum = letters.reduce((acc, letter) => {
+        return acc + alphabet.indexOf(letter) + 1;
+    }, 0);
+
+    const index = (sum - 1) % 26;
+
+    return alphabet[index] || 'z';
+}
